@@ -1,9 +1,12 @@
 import { Pill, Wrapper } from './style'
 
 function Scene({ options }) {
+  const { txt, img } = options
+  console.log(options)
+
   return (
-    <Wrapper>
-      <Pill>{options}</Pill>
+    <Wrapper img={img}>
+      <Pill>{txt}</Pill>
     </Wrapper>
   )
 }

@@ -1,6 +1,6 @@
 import './App.css'
 import Scene from './Components/Scene/Scene'
-import data from './assets/data.json'
+import { data } from './assets/data'
 import { Wrapper } from './styles'
 import { useState } from 'react'
 import Welcome from './Components/Welcome/Welcome'
@@ -19,6 +19,9 @@ function App() {
       {data.map((options, index) => (
         <Scene key={index} options={options} />
       ))}
+
+      <button>Previous</button>
+      <button>Next</button>
     </Wrapper>
   )
 }
