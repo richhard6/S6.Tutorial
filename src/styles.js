@@ -10,9 +10,15 @@ export const Wrapper = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 3rem;
   background-repeat: no-repeat;
   background-position: center;
   color: white;
   ${backgroundSelector}
+`
+
+export const Button = styled.button`
+  margin-bottom: 30px;
+  width: 30%;
 `
