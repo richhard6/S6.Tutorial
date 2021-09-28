@@ -8,6 +8,7 @@ import Welcome from './Components/Welcome/Welcome'
 function App() {
   const [isVisible, setIsVisible] = useState(true)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [background, setBackground] = useState({})
 
   useEffect(() => {
     if (currentIndex < 0) setCurrentIndex((prev) => (prev = 3))
@@ -16,14 +17,21 @@ function App() {
   return isVisible ? (
     <Welcome isVisible={isVisible} setIsVisible={setIsVisible} />
   ) : (
-    <Wrapper>
+    <Wrapper img={background}>
       <div>
         Our hero was floating in outer space when in the distance he spotted a
         spaceship:
       </div>
       {data.map((options, index) => {
-        console.log(index)
-        return currentIndex === index && <Scene key={index} options={options} />
+        return (
+          currentIndex === index && (
+            <Scene
+              key={index}
+              options={options}
+              setBackground={setBackground}
+            />
+          )
+        )
       })}
 
       {currentIndex > 0 && (
