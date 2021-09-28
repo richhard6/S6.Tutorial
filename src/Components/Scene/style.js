@@ -10,11 +10,10 @@ export const Pill = styled.div`
   border: 1px solid black;
   margin-top: 1rem;
   padding: 0.5rem;
-  cursor: pointer;
 
-  &:hover {
-    background-color: black;
-    color: white;
+  height: 100vh;
+  color: white;
+
   }
 `
 
