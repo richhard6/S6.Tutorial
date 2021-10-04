@@ -28,6 +28,7 @@ function Welcome({
             return <div onClick={() => handleClick(index)}>{info.txt}</div>
           })}
 
+        {/* bug aqui */}
         {isClicked && (
           <Index
             setCurrentIndex={setCurrentIndex}
