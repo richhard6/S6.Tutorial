@@ -1,5 +1,21 @@
-function Welcome({ isVisible, setIsVisible }) {
+import { data } from '../../assets/data'
+import Index from '../Index/Index'
+
+function Welcome({
+  isVisible,
+  setIsVisible,
+  isClicked,
+  setCurrentIndex,
+  setIsClicked,
+  currentIndex,
+  setBackground,
+  background,
+}) {
   console.log(isVisible)
+  const handleClick = (index) => {
+    setCurrentIndex((prev) => (prev = index))
+    setIsClicked(true)
+  }
   return (
     isVisible && (
       <div>
@@ -7,6 +23,21 @@ function Welcome({ isVisible, setIsVisible }) {
         <button onClick={() => setIsVisible((prevState) => !prevState)}>
           Start
         </button>
+        {!isClicked &&
+          data.map((info, index) => {
+            return <div onClick={() => handleClick(index)}>{info.txt}</div>
+          })}
+
+        {isClicked && (
+          <Index
+            setCurrentIndex={setCurrentIndex}
+            currentIndex={currentIndex}
+            isClicked={isClicked}
+            setIsClicked={setIsClicked}
+            setBackground={setBackground}
+            background={background}
+          />
+        )}
       </div>
     )
   )

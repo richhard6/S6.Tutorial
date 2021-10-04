@@ -23,7 +23,15 @@ function App() {
   }, [currentIndex])
 
   return isVisible ? (
-    <Welcome isVisible={isVisible} setIsVisible={setIsVisible} />
+    <Welcome
+      isVisible={isVisible}
+      setIsVisible={setIsVisible}
+      isClicked={isClicked}
+      setCurrentIndex={setCurrentIndex}
+      setIsClicked={setIsClicked}
+      currentIndex={currentIndex}
+      background={background}
+    />
   ) : (
     <Wrapper img={background}>
       {currentIndex > 0 && (
@@ -31,13 +39,17 @@ function App() {
           Previous
         </Button>
       )}
-      {currentIndex < 2 && <Button>Next</Button>}
-      {currentIndex < 1 && (
-        <h3>
-          Our hero was floating in outer space when in the distance he spotted a
-          spaceship:
-        </h3>
+      {currentIndex < 3 && (
+        <Button
+          onClick={() => {
+            setIsClicked(true)
+            setCurrentIndex((prev) => prev + 1)
+          }}
+        >
+          Next
+        </Button>
       )}
+
       <Index
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}

@@ -1,14 +1,7 @@
 import { data } from '../../assets/data'
 import Scene from '../Scene/Scene'
-import { useState } from 'react'
 
-function Index({
-  setCurrentIndex,
-  currentIndex,
-  setBackground,
-  isClicked,
-  setIsClicked,
-}) {
+function Index({ currentIndex, setBackground, background }) {
   const scenes = data.map((options, index) => {
     return (
       currentIndex === index && (
@@ -16,23 +9,20 @@ function Index({
           key={index}
           options={options}
           setBackground={setBackground}
+          background={background}
           index={index}
         />
       )
     )
   })
 
-  const handleClick = (index) => {
-    setCurrentIndex((prev) => (prev = index))
-    setIsClicked(true)
-  }
-
+  console.log(currentIndex)
   return (
     <>
-      {!isClicked &&
+      {/*      {!isClicked &&
         data.map((info, index) => {
           return <div onClick={() => handleClick(index)}>{info.txt}</div>
-        })}
+        })} */}
       {scenes}
     </>
   )
