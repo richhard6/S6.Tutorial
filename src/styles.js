@@ -44,12 +44,13 @@ export const Button = styled.button`
   cursor: pointer;
   font-weight: 900;
   margin-right: 1.5rem;
+  font-size: 2rem;
 
   &:hover {
     background-color: cyan;
     color: white;
-    font-size: 1.5rem;
-    transition: font-size 1.5s ease-in-out;
+    font-size: 2.5rem;
+    transition: font-size 1s ease-in-out;
   }
 `
 export const Title = styled.h2`
