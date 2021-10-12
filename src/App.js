@@ -51,7 +51,13 @@ function App() {
           </Button>
         )}
         <Home>
-          <AiOutlineHome />
+          <AiOutlineHome
+            onClick={() => {
+              setIsVisible((prevState) => (prevState = true))
+              setCurrentIndex((prevState) => (prevState = 0))
+              setIsClicked((prevState) => (prevState = false))
+            }}
+          />
         </Home>
       </Flex>
 

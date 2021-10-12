@@ -12,6 +12,9 @@ export const Pill = styled.div`
   height: 65vh;
 
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   max-height: 10vh;
   border-radius: 8px;
