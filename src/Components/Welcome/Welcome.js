@@ -16,6 +16,7 @@ function Welcome({
   const handleClick = (index) => {
     setCurrentIndex((prev) => (prev = index))
     setIsClicked(true)
+    setIsVisible(false)
   }
   return (
     isVisible && (
@@ -26,7 +27,11 @@ function Welcome({
         </Button>
         {!isClicked &&
           data.map((info, index) => {
-            return <Pill onClick={() => handleClick(index)}>{info.txt}</Pill>
+            return (
+              <Pill key={index} onClick={() => handleClick(index)}>
+                {info.txt}
+              </Pill>
+            )
           })}
 
         {/* bug aqui */}

@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const backgroundSelector = (props) => {
   const background = props.img
-  console.log(background)
   return `background-image: url(${background})`
 }
 
@@ -32,6 +31,7 @@ export const Flex = styled.div`
   align-items: center;
   flex-direction: row;
   width: 100%;
+  margin-top: 3rem;
 `
 
 export const Button = styled.button`
@@ -43,6 +43,7 @@ export const Button = styled.button`
   border: 1px solid black;
   cursor: pointer;
   font-weight: 900;
+  margin-right: 1.5rem;
 
   &:hover {
     background-color: cyan;

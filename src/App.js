@@ -12,10 +12,11 @@ function App() {
 
   const [isClicked, setIsClicked] = useState(false)
 
-  /*   const handleClick= ()=>{
-    setCurrentIndex((prev) => prev + 1) 
-    setIsClicked(true)}
-  } */
+  const handleClick = () => {
+    setIsVisible((prevState) => (prevState = true))
+    setCurrentIndex((prevState) => (prevState = 0))
+    setIsClicked((prevState) => (prevState = false))
+  }
 
   useEffect(() => {
     if (currentIndex < 0) setCurrentIndex((prev) => (prev = 3))
@@ -51,13 +52,7 @@ function App() {
           </Button>
         )}
         <Home>
-          <AiOutlineHome
-            onClick={() => {
-              setIsVisible((prevState) => (prevState = true))
-              setCurrentIndex((prevState) => (prevState = 0))
-              setIsClicked((prevState) => (prevState = false))
-            }}
-          />
+          <AiOutlineHome onClick={handleClick} />
         </Home>
       </Flex>
 
