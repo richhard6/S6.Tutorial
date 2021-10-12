@@ -1,5 +1,7 @@
 import { data } from '../../assets/data'
 import Index from '../Index/Index'
+import { Button, Wrapper, Title } from '../../styles'
+import { Pill } from '../Scene/style'
 
 function Welcome({
   isVisible,
@@ -11,21 +13,20 @@ function Welcome({
   setBackground,
   background,
 }) {
-  console.log(isVisible)
   const handleClick = (index) => {
     setCurrentIndex((prev) => (prev = index))
     setIsClicked(true)
   }
   return (
     isVisible && (
-      <div>
-        <h2>Welcome to the Adventure</h2>
-        <button onClick={() => setIsVisible((prevState) => !prevState)}>
-          Start
-        </button>
+      <Wrapper>
+        <Title>Welcome to the Adventure</Title>
+        <Button onClick={() => setIsVisible((prevState) => !prevState)}>
+          START
+        </Button>
         {!isClicked &&
           data.map((info, index) => {
-            return <div onClick={() => handleClick(index)}>{info.txt}</div>
+            return <Pill onClick={() => handleClick(index)}>{info.txt}</Pill>
           })}
 
         {/* bug aqui */}
@@ -39,7 +40,7 @@ function Welcome({
             background={background}
           />
         )}
-      </div>
+      </Wrapper>
     )
   )
 }

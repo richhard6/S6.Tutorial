@@ -16,16 +16,7 @@ function Index({ currentIndex, setBackground, background }) {
     )
   })
 
-  console.log(currentIndex)
-  return (
-    <>
-      {/*      {!isClicked &&
-        data.map((info, index) => {
-          return <div onClick={() => handleClick(index)}>{info.txt}</div>
-        })} */}
-      {scenes}
-    </>
-  )
+  return <>{scenes}</>
 }
 
 export default Index
